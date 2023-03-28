@@ -3,7 +3,7 @@ function PokemonCard() {
 
   const pokemon = pokemonList[1]
 
-  return pokemon.imgSrc === true ? <figure>
+  return pokemon.imgSrc !== undefined ? <figure>
     <img
       src={pokemon.imgSrc}
       alt={pokemon.name}
