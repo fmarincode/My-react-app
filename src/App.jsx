@@ -2,9 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import MyTitle from "./components/MyTitle"
-import PokemonCard from "./components/PokemonCard"
 
+import PokemonCard from "./components/PokemonCard"
+import NavBar from "./components/NavBar"
 
 
 
@@ -44,44 +44,21 @@ function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0)
   const [disabledBtnPrevious, setDisabledBtnPrevious] = useState(false)
   const [disabledBtnNext, setDisabledBtnNext] = useState(false)
+  
   //manipulation
   let pokemon = pokemonList[pokemonIndex]
 
 
-
-
-  const previously = () => {
-
-    if (pokemonIndex <= 0) {
-
-      setDisabledBtnPrevious(true)
-    } else {
-      setDisabledBtnNext(false)
-      setPokemonIndex(pokemonIndex - 1)
-    }
-
-  }
-
-
-  const next = () => {
-
-    if (pokemonIndex >= pokemonList.length - 1) {
-
-      setDisabledBtnNext(true)
-    } else {
-      setDisabledBtnPrevious(false)
-      setPokemonIndex(pokemonIndex + 1)
-    }
-
-  }
   //render
   return (
     <>
       <div>
         <PokemonCard data={pokemon} />
+        <NavBar disabledBtnPrevious={disabledBtnPrevious} setDisabledBtnPrevious ={setDisabledBtnPrevious} disabledBtnNext={disabledBtnNext} setDisabledBtnNext= {setDisabledBtnNext}
+        pokemonIndex ={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList ={pokemonList}/>
       </div>
-      <button disabled={disabledBtnPrevious} onClick={previously}>Previous</button>
-      <button disabled={disabledBtnNext} onClick={next}>Next</button>
+      
+      
     </>
 
 
