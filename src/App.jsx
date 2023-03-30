@@ -9,11 +9,6 @@ import NavBar from "./components/NavBar"
 
 
 
-
-
-
-
-
 function App() {
   const pokemonList = [
     {
@@ -43,14 +38,14 @@ function App() {
   
   //states
   const [pokemonIndex, setPokemonIndex] = useState(0)
-  const [disabledBtnPrevious, setDisabledBtnPrevious] = useState(false)
-  const [disabledBtnNext, setDisabledBtnNext] = useState(false)
-  useEffect(
+ 
+
+  /* useEffect(
     () =>  {
       alert("hello pokemon trainer :)")
     }, 
     []
- );
+ ); */
   
 
   //manipulation
@@ -60,10 +55,11 @@ function App() {
   //render
   return (
     <>
+    
       <div>
         <PokemonCard data={pokemon} />
-        <NavBar disabledBtnPrevious={disabledBtnPrevious} setDisabledBtnPrevious ={setDisabledBtnPrevious} disabledBtnNext={disabledBtnNext} setDisabledBtnNext= {setDisabledBtnNext}
-        pokemonIndex ={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList ={pokemonList} pokemon ={pokemon}/>
+        <NavBar 
+        pokemonIndex ={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList ={pokemonList}/>
       </div>
       
       

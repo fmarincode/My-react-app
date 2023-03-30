@@ -5,6 +5,19 @@
   text-align: center;
 }
 
+body {
+  background-color: #777;
+
+}
+
+.pkmnBtn {
+  margin-right: 1%;
+  background-color: #3556b8;
+  color: yellow;
+  font-weight: bold;
+  margin-top: 1%;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
