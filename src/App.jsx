@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,31 +8,6 @@ import NavBar from "./components/NavBar"
 
 
 
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "charmander",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-  },
-  {
-    name: "squirtle",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-  },
-  {
-    name: "pikachu",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-  },
-  {
-    name: "mew",
-  },
-];
 
 
 
@@ -40,11 +15,44 @@ const pokemonList = [
 
 
 function App() {
+  const pokemonList = [
+    {
+      name: "bulbasaur",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    },
+    {
+      name: "charmander",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    },
+    {
+      name: "squirtle",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    },
+    {
+      name: "pikachu",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    },
+    {
+      name: "mew",
+    },
+  ];
+  
   //states
   const [pokemonIndex, setPokemonIndex] = useState(0)
   const [disabledBtnPrevious, setDisabledBtnPrevious] = useState(false)
   const [disabledBtnNext, setDisabledBtnNext] = useState(false)
+  useEffect(
+    () =>  {
+      alert("hello pokemon trainer :)")
+    }, 
+    []
+ );
   
+
   //manipulation
   let pokemon = pokemonList[pokemonIndex]
 
@@ -55,7 +63,7 @@ function App() {
       <div>
         <PokemonCard data={pokemon} />
         <NavBar disabledBtnPrevious={disabledBtnPrevious} setDisabledBtnPrevious ={setDisabledBtnPrevious} disabledBtnNext={disabledBtnNext} setDisabledBtnNext= {setDisabledBtnNext}
-        pokemonIndex ={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList ={pokemonList}/>
+        pokemonIndex ={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList ={pokemonList} pokemon ={pokemon}/>
       </div>
       
       
