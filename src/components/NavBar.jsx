@@ -1,4 +1,4 @@
-function NavBar ({disabledBtnNext, disabledBtnPrevious, setDisabledBtnNext, setDisabledBtnPrevious, pokemonIndex, setPokemonIndex, pokemonList}){
+function NavBar ({disabledBtnNext, disabledBtnPrevious, setDisabledBtnNext, setDisabledBtnPrevious, pokemonIndex, setPokemonIndex, pokemonList, pokemon}){
     const previously = () => {
 
         if (pokemonIndex <= 0) {
@@ -22,6 +22,10 @@ function NavBar ({disabledBtnNext, disabledBtnPrevious, setDisabledBtnNext, setD
         }
     }
     
+    if (pokemon.name === "pikachu"){
+        alert("pika pikachu !!!")
+    }
+
     return (
         <>
         <button disabled={disabledBtnPrevious} onClick={previously}>Previous</button>
